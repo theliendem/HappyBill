@@ -1,0 +1,139 @@
+{
+  "document": {
+    "document_type": "itemized_hospital_statement",
+    "is_itemized": true,
+    "statement_date": "2026-09-15"
+  },
+  "provider": {
+    "billing_provider_name": "Riverbend Physical Therapy",
+    "billing_npi": "1295837746"
+  },
+  "insurance": {
+    "coverage_status": "insured",
+    "payer_name": "WPS Health Solutions",
+    "plan_name": "Statewide"
+  },
+  "encounter": {
+    "setting": "outpatient"
+  },
+  "line_items": [
+    {
+      "ref": "L1",
+      "service_date": "08/04/2026",
+      "revenue_code": "0424",
+      "code_as_printed": "97161",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "PT EVAL LOW COMPLEXITY",
+      "units": 1,
+      "charge_amount": 340.0,
+      "insurance_paid": 141.44,
+      "adjustment": 0.0,
+      "patient_responsibility": 198.56,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L2",
+      "service_date": "08/04/2026",
+      "revenue_code": "0420",
+      "code_as_printed": "97110",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "THERAPEUTIC EXERCISE EA 15 MIN",
+      "units": 2,
+      "charge_amount": 392.0,
+      "insurance_paid": 163.07,
+      "adjustment": 0.0,
+      "patient_responsibility": 228.93,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L3",
+      "service_date": "08/11/2026",
+      "revenue_code": "0420",
+      "code_as_printed": "97110",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "THERAPEUTIC EXERCISE EA 15 MIN",
+      "units": 2,
+      "charge_amount": 392.0,
+      "insurance_paid": 163.07,
+      "adjustment": 0.0,
+      "patient_responsibility": 228.93,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L4",
+      "service_date": "08/11/2026",
+      "revenue_code": "0420",
+      "code_as_printed": "97140",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "MANUAL THERAPY EA 15 MIN",
+      "units": 1,
+      "charge_amount": 196.0,
+      "insurance_paid": 81.54,
+      "adjustment": 0.0,
+      "patient_responsibility": 114.46,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L5",
+      "service_date": "08/18/2026",
+      "revenue_code": "0420",
+      "code_as_printed": "97110",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "THERAPEUTIC EXERCISE EA 15 MIN",
+      "units": 2,
+      "charge_amount": 392.0,
+      "insurance_paid": 163.07,
+      "adjustment": 0.0,
+      "patient_responsibility": 228.93,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L6",
+      "service_date": "08/18/2026",
+      "revenue_code": "0420",
+      "code_as_printed": "97140",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "MANUAL THERAPY EA 15 MIN",
+      "units": 1,
+      "charge_amount": 196.0,
+      "insurance_paid": 81.54,
+      "adjustment": 0.0,
+      "patient_responsibility": 114.46,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L7",
+      "service_date": "08/25/2026",
+      "revenue_code": "0420",
+      "code_as_printed": "97110",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "THERAPEUTIC EXERCISE EA 15 MIN",
+      "units": 2,
+      "charge_amount": 392.0,
+      "insurance_paid": 163.07,
+      "adjustment": 0.0,
+      "patient_responsibility": 228.93,
+      "legibility": "clear",
+      "candidate_codes": []
+    }
+  ],
+  "totals": {
+    "total_charges": 2300.0,
+    "insurance_payments": 956.8,
+    "adjustments": 0.0,
+    "patient_balance_due": 1343.2
+  }
+}

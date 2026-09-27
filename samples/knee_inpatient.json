@@ -1,0 +1,115 @@
+{
+  "document": {
+    "document_type": "itemized_hospital_statement",
+    "is_itemized": true
+  },
+  "provider": {
+    "billing_provider_name": "UW Health University Hospital",
+    "billing_npi": "1922043744"
+  },
+  "insurance": {
+    "coverage_status": "insured",
+    "payer_name": "WPS Health Solutions",
+    "plan_name": "Statewide"
+  },
+  "encounter": {
+    "setting": "inpatient",
+    "drg_code": "470"
+  },
+  "line_items": [
+    {
+      "ref": "L1",
+      "revenue_code": "0120",
+      "code_as_printed": null,
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "ROOM & BOARD SEMI-PRIVATE",
+      "units": 2,
+      "charge_amount": 9840.0,
+      "candidate_codes": []
+    },
+    {
+      "ref": "L2",
+      "revenue_code": "0250",
+      "code_as_printed": null,
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "PHARMACY",
+      "units": 1,
+      "charge_amount": 4122.35,
+      "candidate_codes": []
+    },
+    {
+      "ref": "L3",
+      "revenue_code": "0272",
+      "code_as_printed": null,
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "STERILE SUPPLIES",
+      "units": 1,
+      "charge_amount": 3877.41,
+      "candidate_codes": []
+    },
+    {
+      "ref": "L4",
+      "revenue_code": "0278",
+      "code_as_printed": null,
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "IMPLANTS",
+      "units": 1,
+      "charge_amount": 21450.0,
+      "candidate_codes": []
+    },
+    {
+      "ref": "L5",
+      "revenue_code": "0360",
+      "code_as_printed": null,
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "OPERATING ROOM SERVICES",
+      "units": 1,
+      "charge_amount": 18940.0,
+      "candidate_codes": []
+    },
+    {
+      "ref": "L6",
+      "revenue_code": "0370",
+      "code_as_printed": null,
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "ANESTHESIA",
+      "units": 1,
+      "charge_amount": 4318.0,
+      "candidate_codes": []
+    },
+    {
+      "ref": "L7",
+      "revenue_code": "0420",
+      "code_as_printed": null,
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "PHYSICAL THERAPY",
+      "units": 1,
+      "charge_amount": 2129.0,
+      "candidate_codes": []
+    },
+    {
+      "ref": "L8",
+      "revenue_code": "0710",
+      "code_as_printed": null,
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "RECOVERY ROOM",
+      "units": 1,
+      "charge_amount": 4500.0,
+      "candidate_codes": []
+    }
+  ],
+  "totals": {
+    "total_charges": 69176.76,
+    "insurance_payments": 30445.76,
+    "adjustments": 0.0,
+    "patient_balance_due": 38731.0
+  }
+}

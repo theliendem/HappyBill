@@ -1,0 +1,59 @@
+{
+  "document": {
+    "document_type": "itemized_hospital_statement",
+    "is_itemized": true,
+    "statement_date": "2026-09-05"
+  },
+  "provider": {
+    "billing_provider_name": "Harbor Women's Health Center",
+    "billing_npi": "1861502294"
+  },
+  "insurance": {
+    "coverage_status": "insured",
+    "payer_name": "Dean Health Plan",
+    "plan_name": "Dean Prime"
+  },
+  "encounter": {
+    "setting": "outpatient"
+  },
+  "line_items": [
+    {
+      "ref": "L1",
+      "service_date": "08/15/2026",
+      "revenue_code": "0403",
+      "code_as_printed": "77067",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "SCREENING MAMMOGRAPHY BILATERAL W/CAD",
+      "units": 1,
+      "charge_amount": 570.0,
+      "insurance_paid": 285.0,
+      "adjustment": 0.0,
+      "patient_responsibility": 285.0,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L2",
+      "service_date": "08/15/2026",
+      "revenue_code": "0402",
+      "code_as_printed": "76641",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "ULTRASOUND BREAST UNILATERAL COMPLETE",
+      "units": 1,
+      "charge_amount": 988.0,
+      "insurance_paid": 195.2,
+      "adjustment": 0.0,
+      "patient_responsibility": 792.8,
+      "legibility": "clear",
+      "candidate_codes": []
+    }
+  ],
+  "totals": {
+    "total_charges": 1558.0,
+    "insurance_payments": 480.2,
+    "adjustments": 0.0,
+    "patient_balance_due": 1077.8
+  }
+}

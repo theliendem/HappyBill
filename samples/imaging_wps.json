@@ -1,0 +1,73 @@
+{
+  "document": {
+    "document_type": "itemized_hospital_statement",
+    "is_itemized": true
+  },
+  "provider": {
+    "billing_provider_name": "UW Health University Hospital",
+    "billing_npi": "1922043744"
+  },
+  "insurance": {
+    "coverage_status": "insured",
+    "payer_name": "WPS Health Solutions",
+    "plan_name": "Statewide"
+  },
+  "encounter": {
+    "setting": "outpatient",
+    "drg_code": null
+  },
+  "line_items": [
+    {
+      "ref": "L1",
+      "revenue_code": "0611",
+      "code_as_printed": null,
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "MRI BRAIN W/WO CONTRAST",
+      "units": 1,
+      "charge_amount": 6798.0,
+      "candidate_codes": [
+        {
+          "code": "70553",
+          "code_type": "CPT"
+        },
+        {
+          "code": "70552",
+          "code_type": "CPT"
+        },
+        {
+          "code": "70551",
+          "code_type": "CPT"
+        }
+      ]
+    },
+    {
+      "ref": "L2",
+      "revenue_code": "0352",
+      "code_as_printed": "74177",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "HB-CT ABD & PELVIS W/CONTRAST",
+      "units": 1,
+      "charge_amount": 6139.0,
+      "candidate_codes": []
+    },
+    {
+      "ref": "L3",
+      "revenue_code": "0300",
+      "code_as_printed": "36415",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "HB-VENIPUNCTURE",
+      "units": 1,
+      "charge_amount": 38.95,
+      "candidate_codes": []
+    }
+  ],
+  "totals": {
+    "total_charges": 12975.95,
+    "insurance_payments": null,
+    "adjustments": null,
+    "patient_balance_due": 12975.95
+  }
+}

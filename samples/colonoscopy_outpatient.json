@@ -1,0 +1,107 @@
+{
+  "document": {
+    "document_type": "itemized_hospital_statement",
+    "is_itemized": true,
+    "statement_date": "2026-08-30"
+  },
+  "provider": {
+    "billing_provider_name": "Lakeview Regional Medical Center",
+    "billing_npi": "1639204471"
+  },
+  "insurance": {
+    "coverage_status": "insured",
+    "payer_name": "Anthem Blue Cross Blue Shield",
+    "plan_name": "Blue Access PPO"
+  },
+  "encounter": {
+    "setting": "outpatient"
+  },
+  "line_items": [
+    {
+      "ref": "L1",
+      "service_date": "08/12/2026",
+      "revenue_code": "0750",
+      "code_as_printed": "45380",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "HB-COLONOSCOPY W/ BIOPSY",
+      "units": 1,
+      "charge_amount": 4740.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L2",
+      "service_date": "08/12/2026",
+      "revenue_code": "0370",
+      "code_as_printed": "00811",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "ANESTHESIA LOWER GI ENDOSCOPY",
+      "units": 1,
+      "charge_amount": 1265.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L3",
+      "service_date": "08/12/2026",
+      "revenue_code": "0310",
+      "code_as_printed": "88305",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "HB-GROSS AND MICRO LEVEL IV",
+      "units": 1,
+      "charge_amount": 501.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L4",
+      "service_date": "08/12/2026",
+      "revenue_code": "0636",
+      "code_as_printed": "J2250",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "MIDAZOLAM HCL 2 MG/2ML INJ SOLN",
+      "units": 1,
+      "charge_amount": 165.48,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L5",
+      "service_date": "08/12/2026",
+      "revenue_code": "0710",
+      "code_as_printed": null,
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "RECOVERY ROOM PER HOUR",
+      "units": 2,
+      "charge_amount": 1180.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    }
+  ],
+  "totals": {
+    "total_charges": 7851.48,
+    "insurance_payments": 1752.16,
+    "adjustments": 0.0,
+    "patient_balance_due": 6099.32
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "document": {
+    "document_type": "physician_statement",
+    "is_itemized": true
+  },
+  "provider": {
+    "billing_provider_name": "UW Health Physicians",
+    "billing_npi": null
+  },
+  "insurance": {
+    "coverage_status": "insured",
+    "payer_name": "WPS Health Solutions",
+    "plan_name": "Statewide"
+  },
+  "encounter": {
+    "setting": "outpatient",
+    "drg_code": null
+  },
+  "line_items": [
+    {
+      "ref": "L1",
+      "revenue_code": null,
+      "code_as_printed": "99214",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "OFFICE/OUTPATIENT VISIT EST LVL 3",
+      "units": 1,
+      "charge_amount": 312.0,
+      "candidate_codes": []
+    },
+    {
+      "ref": "L2",
+      "revenue_code": null,
+      "code_as_printed": "36415",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "VENIPUNCTURE",
+      "units": 1,
+      "charge_amount": 25.0,
+      "candidate_codes": []
+    }
+  ],
+  "totals": {
+    "total_charges": 337.0,
+    "insurance_payments": 0.0,
+    "adjustments": 0.0,
+    "patient_balance_due": 337.0
+  }
+}

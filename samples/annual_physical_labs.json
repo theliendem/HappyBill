@@ -1,0 +1,139 @@
+{
+  "document": {
+    "document_type": "physician_statement",
+    "is_itemized": true,
+    "statement_date": "2026-08-28"
+  },
+  "provider": {
+    "billing_provider_name": "Maple Grove Family Medicine",
+    "billing_npi": "1750483362"
+  },
+  "insurance": {
+    "coverage_status": "insured",
+    "payer_name": "Aetna",
+    "plan_name": "Open Access Managed Choice"
+  },
+  "encounter": {
+    "setting": "outpatient"
+  },
+  "line_items": [
+    {
+      "ref": "L1",
+      "service_date": "08/06/2026",
+      "revenue_code": null,
+      "code_as_printed": "99396",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Preventive visit, est. patient, age 40-64",
+      "units": 1,
+      "charge_amount": 310.0,
+      "insurance_paid": 37.2,
+      "adjustment": 0.0,
+      "patient_responsibility": 272.8,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L2",
+      "service_date": "08/06/2026",
+      "revenue_code": null,
+      "code_as_printed": "80053",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Comprehensive metabolic panel",
+      "units": 1,
+      "charge_amount": 379.0,
+      "insurance_paid": 0.0,
+      "adjustment": 0.0,
+      "patient_responsibility": 379.0,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L3",
+      "service_date": "08/06/2026",
+      "revenue_code": null,
+      "code_as_printed": "85025",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "CBC with automated differential",
+      "units": 1,
+      "charge_amount": 135.0,
+      "insurance_paid": 0.0,
+      "adjustment": 0.0,
+      "patient_responsibility": 135.0,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L4",
+      "service_date": "08/06/2026",
+      "revenue_code": null,
+      "code_as_printed": "80061",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Lipid panel",
+      "units": 1,
+      "charge_amount": 286.0,
+      "insurance_paid": 0.0,
+      "adjustment": 0.0,
+      "patient_responsibility": 286.0,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L5",
+      "service_date": "08/06/2026",
+      "revenue_code": null,
+      "code_as_printed": "83036",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Hemoglobin A1c",
+      "units": 1,
+      "charge_amount": 108.0,
+      "insurance_paid": 0.0,
+      "adjustment": 0.0,
+      "patient_responsibility": 108.0,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L6",
+      "service_date": "08/06/2026",
+      "revenue_code": null,
+      "code_as_printed": "84443",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Thyroid stimulating hormone (TSH)",
+      "units": 1,
+      "charge_amount": 214.0,
+      "insurance_paid": 0.0,
+      "adjustment": 0.0,
+      "patient_responsibility": 214.0,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L7",
+      "service_date": "08/06/2026",
+      "revenue_code": null,
+      "code_as_printed": "36415",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Routine venipuncture",
+      "units": 1,
+      "charge_amount": 38.95,
+      "insurance_paid": 0.0,
+      "adjustment": 0.0,
+      "patient_responsibility": 38.95,
+      "legibility": "clear",
+      "candidate_codes": []
+    }
+  ],
+  "totals": {
+    "total_charges": 1470.95,
+    "insurance_payments": 37.2,
+    "adjustments": 0.0,
+    "patient_balance_due": 1433.75
+  }
+}

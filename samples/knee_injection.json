@@ -1,0 +1,91 @@
+{
+  "document": {
+    "document_type": "physician_statement",
+    "is_itemized": true,
+    "statement_date": "2026-09-14"
+  },
+  "provider": {
+    "billing_provider_name": "Lakeshore Sports Medicine",
+    "billing_npi": "1417730958"
+  },
+  "insurance": {
+    "coverage_status": "insured",
+    "payer_name": "UnitedHealthcare",
+    "plan_name": "Navigate HMO"
+  },
+  "encounter": {
+    "setting": "outpatient"
+  },
+  "line_items": [
+    {
+      "ref": "L1",
+      "service_date": "09/03/2026",
+      "revenue_code": null,
+      "code_as_printed": "99213",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Office visit, established, low complexity",
+      "units": 1,
+      "charge_amount": 210.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L2",
+      "service_date": "09/03/2026",
+      "revenue_code": null,
+      "code_as_printed": "20610",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Arthrocentesis/injection, major joint",
+      "units": 1,
+      "charge_amount": 1050.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L3",
+      "service_date": "09/03/2026",
+      "revenue_code": null,
+      "code_as_printed": "J3301",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Triamcinolone acetonide, per 10 mg",
+      "units": 4,
+      "charge_amount": 607.92,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L4",
+      "service_date": "09/03/2026",
+      "revenue_code": null,
+      "code_as_printed": "76942",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Ultrasonic guidance for needle placement",
+      "units": 1,
+      "charge_amount": 390.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    }
+  ],
+  "totals": {
+    "total_charges": 2257.92,
+    "insurance_payments": 278.66,
+    "adjustments": 0.0,
+    "patient_balance_due": 1979.26
+  }
+}

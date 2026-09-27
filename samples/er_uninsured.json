@@ -1,0 +1,126 @@
+{
+  "document": {
+    "document_type": "itemized_hospital_statement",
+    "is_itemized": true
+  },
+  "provider": {
+    "billing_provider_name": "UW Health University Hospital",
+    "billing_npi": "1922043744"
+  },
+  "insurance": {
+    "coverage_status": "uninsured_self_pay",
+    "payer_name": null,
+    "plan_name": null
+  },
+  "encounter": {
+    "setting": "emergency",
+    "drg_code": null
+  },
+  "line_items": [
+    {
+      "ref": "L1",
+      "revenue_code": "0450",
+      "code_as_printed": "99284",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "HB-ED LEVEL 4 VISIT",
+      "units": 1,
+      "charge_amount": 2373.0,
+      "candidate_codes": []
+    },
+    {
+      "ref": "L2",
+      "revenue_code": "0730",
+      "code_as_printed": "93005",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "HB-EKG ROUTINE TRACING ONLY >=12 LEADS",
+      "units": 1,
+      "charge_amount": 323.0,
+      "candidate_codes": []
+    },
+    {
+      "ref": "L3",
+      "revenue_code": "0300",
+      "code_as_printed": "85025",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "HB-HEM. SURV. W/AUTO DIFF&PLT",
+      "units": 1,
+      "charge_amount": 135.0,
+      "candidate_codes": []
+    },
+    {
+      "ref": "L4",
+      "revenue_code": "0300",
+      "code_as_printed": "85025",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "HB-HEM. SURV. W/AUTO DIFF&PLT",
+      "units": 1,
+      "charge_amount": 135.0,
+      "candidate_codes": []
+    },
+    {
+      "ref": "L5",
+      "revenue_code": "0300",
+      "code_as_printed": "80053",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "HB-COMPREHENSIVE METAB PANEL",
+      "units": 1,
+      "charge_amount": 379.0,
+      "candidate_codes": []
+    },
+    {
+      "ref": "L6",
+      "revenue_code": "0300",
+      "code_as_printed": "36415",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "HB-VENIPUNCTURE",
+      "units": 1,
+      "charge_amount": 38.95,
+      "candidate_codes": []
+    },
+    {
+      "ref": "L7",
+      "revenue_code": "0324",
+      "code_as_printed": "71046",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "HB-X-RAY EXAM CHEST 2 VIEWS",
+      "units": 1,
+      "charge_amount": 489.0,
+      "candidate_codes": []
+    },
+    {
+      "ref": "L8",
+      "revenue_code": "0260",
+      "code_as_printed": "96374",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "HB-PRIMARY TPD INJ IV PUSH",
+      "units": 1,
+      "charge_amount": 331.0,
+      "candidate_codes": []
+    },
+    {
+      "ref": "L9",
+      "revenue_code": "0636",
+      "code_as_printed": "J2405",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "ONDANSETRON HCL 4 MG/2ML INJ SOLN",
+      "units": 1,
+      "charge_amount": 117.01,
+      "candidate_codes": []
+    }
+  ],
+  "totals": {
+    "total_charges": 4320.96,
+    "insurance_payments": null,
+    "adjustments": null,
+    "patient_balance_due": 4320.96
+  }
+}

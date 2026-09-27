@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ClarityBill test page</title>
+</head>
+<body>
+<h1>ClarityBill test page</h1>
+<p><b>Uploads go to the AI model as-is (no redaction here).</b> Use the sample bills in <code>samples/</code>,
+or cover your personal details in the image first.</p>
+
+<h2>1. Bill image</h2>
+<input type="file" id="files" accept="image/png,image/jpeg,image/webp" multiple>
+<button id="read">Read bill</button>
+or sample: <select id="sample"><option value="">(pick)</option></select>
+<button id="loadSample">Load sample JSON (skips the AI read)</button>
+
+<h2>2. Bill JSON (edit to fix mistakes, or type a bill by hand)</h2>
+<textarea id="bill" rows="14" cols="110"></textarea><br>
+<button id="analyze">Analyze</button>
+
+<h2>3. Result</h2>
+<p id="status"></p>
+<div id="result"></div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+function status(msg) { $("status").textContent = msg; }
+
+async function call(path, options) {
+  const r = await fetch(path, options);
+  const body = await r.json().catch(() => ({}));
+  if (!r.ok && r.status !== 409) throw new Error(`${r.status}: ${JSON.stringify(body.detail ?? body)}`);
+  return {status: r.status, body};
+}
+
+const postJSON = (path, data) => call(path, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(data)});
+
+async function init() {
+  const names = await fetch("/api/samples").then(r => r.json());
+  for (const n of names) $("sample").add(new Option(n, n));
+}
+
+$("read").onclick = async () => {
+  const files = $("files").files;
+  if (!files.length) return status("Pick an image first.");
+  const fd = new FormData();
+  for (const f of files) fd.append("files", f);
+  status("Reading bill...");
+  try {
+    const {body} = await call("/api/extract", {method: "POST", body: fd});
+    $("bill").value = JSON.stringify(body, null, 2);
+    await analyze();
+  } catch (e) { status("Read failed: " + e.message); }
+};
+
+$("loadSample").onclick = async () => {
+  const name = $("sample").value;
+  if (!name) return status("Pick a sample first.");
+  const bill = await fetch(`/api/samples/${name}.json`).then(r => r.json());
+  $("bill").value = JSON.stringify(bill, null, 2);
+  await analyze();
+};
+
+$("analyze").onclick = () => analyze();
+
+function billJSON() {
+  try { return JSON.parse($("bill").value); }
+  catch (e) { status("Bill JSON is not valid: " + e.message); return null; }
+}
+
+async function analyze() {
+  const bill = billJSON();
+  if (!bill) return;
+  $("result").innerHTML = "";
+  try { await plan(bill); }
+  catch (e) { status("Failed: " + e.message); }
+}
+
+function escapeHtml(s) { return String(s ?? "").replace(/[&<>]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;"}[c])); }
+
+async function plan(bill) {
+  status("Matching prices and writing the negotiation plan...");
+  const {body} = await postJSON("/api/plan", {bill});
+  const d = body.display;
+  const money = (x) => x == null ? "" : "$" + x.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
+  const list = (items, tag = "ul") => items && items.length ? `<${tag}>${items.map(i => `<li>${i}</li>`).join("")}</${tag}>` : "";
+  const cards = d.lines.map(c => `
+    <tr><td><b>${escapeHtml(c.name)}</b>${c.billed_as ? `<br><small>On bill: ${escapeHtml(c.billed_as)}${c.code ? " (" + escapeHtml(c.code) + ")" : ""}</small>` : ""}
+        ${c.badges.length ? "<br><small>[" + c.badges.map(b => escapeHtml(b.text)).join("] [") + "]</small>" : ""}
+        ${c.note ? `<br><small><i>${escapeHtml(c.note)}</i></small>` : ""}
+        ${c.price_range ? `<br><small>${escapeHtml(c.price_range.text)}</small>` : ""}</td>
+      <td>${money(c.billed)}</td><td>${money(c.fair_price)}<br><small>${escapeHtml(c.fair_label ?? "")}</small></td>
+      <td><b>${money(c.savings)}</b></td></tr>`).join("");
+  const stay = d.included_in_stay ? `<h3>${escapeHtml(d.included_in_stay.title)}</h3>` +
+    list(d.included_in_stay.items.map(i => `${escapeHtml(i.name)}: ${money(i.billed)}`)) : "";
+  $("result").innerHTML = `
+    <h2>${escapeHtml(d.hero.headline)}</h2>
+    <p><big><b>${money(d.hero.savings)}</b></big> ${escapeHtml(d.hero.savings_label)}</p>
+    <p>Billed ${money(d.hero.billed)} &middot; ${escapeHtml(d.hero.fair_label ?? "")} ${money(d.hero.fair)}</p>
+    <p>${escapeHtml(d.hero.comparison ?? "")}</p>
+    <p>${escapeHtml(d.provider ?? "")} &middot; ${escapeHtml(d.insurance ?? "")}</p>
+    <p>${escapeHtml(d.summary)}</p>
+    <h3>What we found</h3>${list(d.findings.map(f => `<b>${escapeHtml(f.title)}</b>: ${escapeHtml(f.detail)} <i>${escapeHtml(f.action)}</i>`))}
+    <h3>Your bill, line by line</h3>
+    <table border="1" cellpadding="4"><tr><th>Service</th><th>Billed</th><th>Fair price</th><th>Savings</th></tr>${cards}</table>
+    ${stay}
+    <h3>What to say when you call</h3>${d.call_script.map(p => `<p>${escapeHtml(p)}</p>`).join("")}
+    <h3>Or send this message</h3><p><b>Subject: ${escapeHtml(d.letter.subject)}</b></p>
+    ${d.letter.body.map(p => `<p>${escapeHtml(p).replace(/\n/g, "<br>")}</p>`).join("")}
+    ${d.assumptions.length ? "<h3>What we assumed</h3>" + list(d.assumptions.map(escapeHtml)) : ""}
+    <h3>Where these prices come from</h3>${list(d.sources.map(escapeHtml))}
+    <p><small>${escapeHtml(d.disclaimer)}</small></p>
+    <p><small>Script written by: ${escapeHtml(body.generated_by)}${body.note ? " (" + escapeHtml(body.note) + ")" : ""}</small></p>
+    <details><summary>Raw response</summary><pre>${escapeHtml(JSON.stringify(body, null, 2))}</pre></details>`;
+  status("Done.");
+}
+
+init();
+</script>
+</body>
+</html>

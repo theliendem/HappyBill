@@ -1,0 +1,59 @@
+{
+  "document": {
+    "document_type": "itemized_hospital_statement",
+    "is_itemized": true,
+    "statement_date": "2026-09-18"
+  },
+  "provider": {
+    "billing_provider_name": "Pinecrest Sleep Center",
+    "billing_npi": "1932664105"
+  },
+  "insurance": {
+    "coverage_status": "insured",
+    "payer_name": "Anthem Blue Cross Blue Shield",
+    "plan_name": "Pathway X HMO"
+  },
+  "encounter": {
+    "setting": "outpatient"
+  },
+  "line_items": [
+    {
+      "ref": "L1",
+      "service_date": "09/01/2026",
+      "revenue_code": "0740",
+      "code_as_printed": "95810",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "POLYSOMNOGRAPHY, 4+ PARAMETERS, ATTENDED",
+      "units": 1,
+      "charge_amount": 5950.0,
+      "insurance_paid": 534.45,
+      "adjustment": 0.0,
+      "patient_responsibility": 5415.55,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L2",
+      "service_date": "09/01/2026",
+      "revenue_code": "0920",
+      "code_as_printed": null,
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "SLEEP TECHNOLOGIST MONITORING",
+      "units": 1,
+      "charge_amount": 420.0,
+      "insurance_paid": 97.02,
+      "adjustment": 0.0,
+      "patient_responsibility": 322.98,
+      "legibility": "clear",
+      "candidate_codes": []
+    }
+  ],
+  "totals": {
+    "total_charges": 6370.0,
+    "insurance_payments": 631.47,
+    "adjustments": 0.0,
+    "patient_balance_due": 5738.53
+  }
+}

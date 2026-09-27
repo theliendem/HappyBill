@@ -1,0 +1,123 @@
+{
+  "document": {
+    "document_type": "itemized_hospital_statement",
+    "is_itemized": true,
+    "statement_date": "2026-09-16"
+  },
+  "provider": {
+    "billing_provider_name": "Prairie View Community Hospital",
+    "billing_npi": "1780526613"
+  },
+  "insurance": {
+    "coverage_status": "uninsured_self_pay",
+    "payer_name": null,
+    "plan_name": null
+  },
+  "encounter": {
+    "setting": "emergency"
+  },
+  "line_items": [
+    {
+      "ref": "L1",
+      "service_date": "09/04/2026",
+      "revenue_code": "0450",
+      "code_as_printed": "99283",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "HB-ED LEVEL 3 VISIT",
+      "units": 1,
+      "charge_amount": 1698.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L2",
+      "service_date": "09/04/2026",
+      "revenue_code": "0402",
+      "code_as_printed": "76700",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "HB-ULTRASOUND-ABDOMEN COMPLETE",
+      "units": 1,
+      "charge_amount": 1838.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L3",
+      "service_date": "09/04/2026",
+      "revenue_code": "0300",
+      "code_as_printed": "81001",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "HB-URINALYSIS AUTO W MICRO",
+      "units": 1,
+      "charge_amount": 66.15,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L4",
+      "service_date": "09/04/2026",
+      "revenue_code": "0300",
+      "code_as_printed": "84703",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "HB-HCG QL SERUM",
+      "units": 1,
+      "charge_amount": 82.75,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L5",
+      "service_date": "09/04/2026",
+      "revenue_code": "0300",
+      "code_as_printed": "85025",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "HB-HEM. SURV. W/AUTO DIFF&PLT",
+      "units": 1,
+      "charge_amount": 135.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L6",
+      "service_date": "09/04/2026",
+      "revenue_code": "0300",
+      "code_as_printed": "36415",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "HB-VENIPUNCTURE",
+      "units": 1,
+      "charge_amount": 38.95,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    }
+  ],
+  "totals": {
+    "total_charges": 3858.85,
+    "insurance_payments": 0.0,
+    "adjustments": 0.0,
+    "patient_balance_due": 3858.85
+  }
+}

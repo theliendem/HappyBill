@@ -1,0 +1,75 @@
+{
+  "document": {
+    "document_type": "physician_statement",
+    "is_itemized": true,
+    "statement_date": "2026-09-19"
+  },
+  "provider": {
+    "billing_provider_name": "Bluestem Allergy & Asthma Clinic",
+    "billing_npi": "1548862207"
+  },
+  "insurance": {
+    "coverage_status": "insured",
+    "payer_name": "Aetna",
+    "plan_name": "Choice POS II"
+  },
+  "encounter": {
+    "setting": "outpatient"
+  },
+  "line_items": [
+    {
+      "ref": "L1",
+      "service_date": "09/08/2026",
+      "revenue_code": null,
+      "code_as_printed": "99204",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "New patient visit, moderate complexity",
+      "units": 1,
+      "charge_amount": 395.0,
+      "insurance_paid": 0.0,
+      "adjustment": 19.75,
+      "patient_responsibility": 375.25,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L2",
+      "service_date": "09/08/2026",
+      "revenue_code": null,
+      "code_as_printed": "95004",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Percutaneous allergy tests, each",
+      "units": 40,
+      "charge_amount": 4240.0,
+      "insurance_paid": 97.8,
+      "adjustment": 212.0,
+      "patient_responsibility": 3930.2,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L3",
+      "service_date": "09/08/2026",
+      "revenue_code": null,
+      "code_as_printed": "94010",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Spirometry",
+      "units": 1,
+      "charge_amount": 165.0,
+      "insurance_paid": 46.2,
+      "adjustment": 8.25,
+      "patient_responsibility": 110.55,
+      "legibility": "clear",
+      "candidate_codes": []
+    }
+  ],
+  "totals": {
+    "total_charges": 4800.0,
+    "insurance_payments": 144.0,
+    "adjustments": 240.0,
+    "patient_balance_due": 4416.0
+  }
+}

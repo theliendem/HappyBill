@@ -1,0 +1,12 @@
+.env
+.venv/
+.pgdata/
+parsers/out/
+__pycache__/
+*.json.gz
+.DS_Store
+.pytest_cache/
+
+# Raw price-transparency source files (too large for GitHub)
+in-network-rates-*.json
+University Hospital.csv

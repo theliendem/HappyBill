@@ -1,0 +1,107 @@
+{
+  "document": {
+    "document_type": "physician_statement",
+    "is_itemized": true,
+    "statement_date": "2026-09-11"
+  },
+  "provider": {
+    "billing_provider_name": "Little Oaks Pediatrics",
+    "billing_npi": "1205948830"
+  },
+  "insurance": {
+    "coverage_status": "insured",
+    "payer_name": "Quartz Health Solutions",
+    "plan_name": "Quartz Choice"
+  },
+  "encounter": {
+    "setting": "outpatient"
+  },
+  "line_items": [
+    {
+      "ref": "L1",
+      "service_date": "09/02/2026",
+      "revenue_code": null,
+      "code_as_printed": "99392",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Well child visit, age 1-4, established",
+      "units": 1,
+      "charge_amount": 410.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L2",
+      "service_date": "09/02/2026",
+      "revenue_code": null,
+      "code_as_printed": "90707",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "MMR vaccine, live, subcutaneous",
+      "units": 1,
+      "charge_amount": 385.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L3",
+      "service_date": "09/02/2026",
+      "revenue_code": null,
+      "code_as_printed": "90700",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "DTaP vaccine, under 7 years",
+      "units": 1,
+      "charge_amount": 245.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L4",
+      "service_date": "09/02/2026",
+      "revenue_code": null,
+      "code_as_printed": "90460",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Immunization admin w/ counseling, 1st component",
+      "units": 2,
+      "charge_amount": 360.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L5",
+      "service_date": "09/02/2026",
+      "revenue_code": null,
+      "code_as_printed": "96110",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Developmental screening, standardized",
+      "units": 1,
+      "charge_amount": 95.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    }
+  ],
+  "totals": {
+    "total_charges": 1495.0,
+    "insurance_payments": 872.0,
+    "adjustments": 74.75,
+    "patient_balance_due": 548.25
+  }
+}

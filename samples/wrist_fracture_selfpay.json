@@ -1,0 +1,91 @@
+{
+  "document": {
+    "document_type": "physician_statement",
+    "is_itemized": true,
+    "statement_date": "2026-09-09"
+  },
+  "provider": {
+    "billing_provider_name": "Summit Orthopedics & Sports Medicine",
+    "billing_npi": "1669021837"
+  },
+  "insurance": {
+    "coverage_status": "uninsured_self_pay",
+    "payer_name": null,
+    "plan_name": null
+  },
+  "encounter": {
+    "setting": "outpatient"
+  },
+  "line_items": [
+    {
+      "ref": "L1",
+      "service_date": "08/31/2026",
+      "revenue_code": null,
+      "code_as_printed": "99203",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "New patient office visit",
+      "units": 1,
+      "charge_amount": 245.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L2",
+      "service_date": "08/31/2026",
+      "revenue_code": null,
+      "code_as_printed": "73110",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "X-ray wrist, 3+ views",
+      "units": 1,
+      "charge_amount": 502.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L3",
+      "service_date": "08/31/2026",
+      "revenue_code": null,
+      "code_as_printed": "29125",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Application of short arm splint, static",
+      "units": 1,
+      "charge_amount": 559.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L4",
+      "service_date": "08/31/2026",
+      "revenue_code": null,
+      "code_as_printed": "L3908",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Wrist hand orthosis, prefabricated",
+      "units": 1,
+      "charge_amount": 145.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    }
+  ],
+  "totals": {
+    "total_charges": 1451.0,
+    "insurance_payments": 0.0,
+    "adjustments": 362.75,
+    "patient_balance_due": 1088.25
+  }
+}

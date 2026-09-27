@@ -1,0 +1,43 @@
+{
+  "document": {
+    "document_type": "itemized_hospital_statement",
+    "is_itemized": true,
+    "statement_date": "2026-09-02"
+  },
+  "provider": {
+    "billing_provider_name": "Cedar Ridge Imaging Center",
+    "billing_npi": null
+  },
+  "insurance": {
+    "coverage_status": "insured",
+    "payer_name": "UnitedHealthcare",
+    "plan_name": "Choice Plus"
+  },
+  "encounter": {
+    "setting": "outpatient"
+  },
+  "line_items": [
+    {
+      "ref": "L1",
+      "service_date": "08/19/2026",
+      "revenue_code": "0610",
+      "code_as_printed": "73721",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "MRI LOWER EXTREMITY JOINT W/O CONTRAST - RIGHT KNEE",
+      "units": 1,
+      "charge_amount": 4367.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    }
+  ],
+  "totals": {
+    "total_charges": 4367.0,
+    "insurance_payments": 0.0,
+    "adjustments": 0.0,
+    "patient_balance_due": 4367.0
+  }
+}

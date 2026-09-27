@@ -1,0 +1,139 @@
+{
+  "document": {
+    "document_type": "itemized_hospital_statement",
+    "is_itemized": true,
+    "statement_date": "2026-09-10"
+  },
+  "provider": {
+    "billing_provider_name": "St. Brigid Memorial Hospital",
+    "billing_npi": "1043378215"
+  },
+  "insurance": {
+    "coverage_status": "insured",
+    "payer_name": "Blue Cross Blue Shield",
+    "plan_name": "BluePreferred PPO"
+  },
+  "encounter": {
+    "setting": "emergency"
+  },
+  "line_items": [
+    {
+      "ref": "L1",
+      "service_date": "08/27/2026",
+      "revenue_code": "0450",
+      "code_as_printed": "99285",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "HB-ED LEVEL 5 VISIT",
+      "units": 1,
+      "charge_amount": 3548.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L2",
+      "service_date": "08/27/2026",
+      "revenue_code": "0351",
+      "code_as_printed": "70450",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "HB-CT HEAD WO IV CONTRAST",
+      "units": 1,
+      "charge_amount": 2213.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L3",
+      "service_date": "08/27/2026",
+      "revenue_code": "0260",
+      "code_as_printed": "96374",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "HB-PRIMARY TPD INJ IV PUSH",
+      "units": 1,
+      "charge_amount": 331.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L4",
+      "service_date": "08/27/2026",
+      "revenue_code": "0636",
+      "code_as_printed": "J1885",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "KETOROLAC TROMETHAMINE 30 MG/ML INJ",
+      "units": 1,
+      "charge_amount": 130.84,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L5",
+      "service_date": "08/27/2026",
+      "revenue_code": "0636",
+      "code_as_printed": "J2405",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "ONDANSETRON HCL 4 MG/2ML INJ SOLN",
+      "units": 1,
+      "charge_amount": 117.01,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L6",
+      "service_date": "08/27/2026",
+      "revenue_code": "0300",
+      "code_as_printed": "85025",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "HB-HEM. SURV. W/AUTO DIFF&PLT",
+      "units": 1,
+      "charge_amount": 135.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L7",
+      "service_date": "08/27/2026",
+      "revenue_code": "0300",
+      "code_as_printed": "80053",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "HB-COMPREHENSIVE METAB PANEL",
+      "units": 1,
+      "charge_amount": 379.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    }
+  ],
+  "totals": {
+    "total_charges": 6853.85,
+    "insurance_payments": 1357.55,
+    "adjustments": 0.0,
+    "patient_balance_due": 5496.3
+  }
+}

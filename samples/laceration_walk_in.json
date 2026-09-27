@@ -1,0 +1,91 @@
+{
+  "document": {
+    "document_type": "physician_statement",
+    "is_itemized": true,
+    "statement_date": "2026-09-06"
+  },
+  "provider": {
+    "billing_provider_name": "QuickCare Walk-In Clinic",
+    "billing_npi": null
+  },
+  "insurance": {
+    "coverage_status": "insured",
+    "payer_name": "WPS Health Solutions",
+    "plan_name": "Statewide"
+  },
+  "encounter": {
+    "setting": "outpatient"
+  },
+  "line_items": [
+    {
+      "ref": "L1",
+      "service_date": "08/26/2026",
+      "revenue_code": null,
+      "code_as_printed": "99213",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Office visit, established patient",
+      "units": 1,
+      "charge_amount": 210.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L2",
+      "service_date": "08/26/2026",
+      "revenue_code": null,
+      "code_as_printed": "12002",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Simple repair of wound, 2.6-7.5 cm",
+      "units": 1,
+      "charge_amount": 879.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L3",
+      "service_date": "08/26/2026",
+      "revenue_code": null,
+      "code_as_printed": "90715",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Tdap vaccine, 7 years and older",
+      "units": 1,
+      "charge_amount": 130.33,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L4",
+      "service_date": "08/26/2026",
+      "revenue_code": null,
+      "code_as_printed": "90471",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Immunization administration, 1st",
+      "units": 1,
+      "charge_amount": 98.5,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    }
+  ],
+  "totals": {
+    "total_charges": 1317.83,
+    "insurance_payments": 495.14,
+    "adjustments": 0.0,
+    "patient_balance_due": 822.69
+  }
+}

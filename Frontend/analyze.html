@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f6f4ee">
+  <title>Check your bill — HappyBill</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="analyze.css">
+</head>
+<body class="analyzer-page">
+  <header class="site-header wrap"><a class="brand" href="index.html">Happy<span>Bill</span><i>✳</i></a><a class="back-home" href="index.html">← Back to home</a><div class="privacy-header"><span>⌑</span> You choose what we see</div></header>
+  <main class="analyzer-main wrap">
+    <section class="analyzer-intro"><p class="eyebrow">Check your bill</p><h1>Are you paying<br>too much?</h1><p>Upload your medical bill. We’ll compare it with published prices and show what you should really pay.</p>
+      <div class="progress-track" aria-label="Three step process"><div class="progress-step current"><i>1</i><span>Your bill</span></div><b></b><div class="progress-step"><i>2</i><span>Your savings</span></div><b></b><div class="progress-step"><i>3</i><span>What to say</span></div></div>
+    </section>
+
+    <section class="work-card" id="bill-step">
+      <div class="input-tabs" role="tablist"><button class="input-tab selected" role="tab" aria-selected="true" data-view="upload-view">Upload a bill</button><button class="input-tab" role="tab" aria-selected="false" data-view="manual-view">Type it in</button></div>
+
+      <div id="upload-view" class="input-view">
+        <label class="drop-area" id="drop-area" for="bill-file"><span class="upload-symbol">↑</span><b>Drop your bill here, or <u>choose a file</u></b><small>PDF, photo, or text file</small><input id="bill-file" type="file" accept=".pdf,.jpg,.jpeg,.png,.txt,.csv,application/pdf,image/jpeg,image/png,text/plain,text/csv"></label>
+        <div class="file-status" aria-live="polite"></div>
+        <div class="extract-status hidden" aria-live="polite"></div>
+        <div class="redaction-preview hidden" id="redaction-preview">
+          <div class="preview-title"><b id="preview-heading">Cover your personal details</b><span id="preview-instructions">Drag over your name, address and account numbers</span></div>
+          <div class="canvas-toolbar hidden" id="canvas-toolbar"><button class="subtle-button" id="undo-blackout" type="button">↶ Undo</button><button class="subtle-button" id="clear-blackouts" type="button">Clear</button><div class="pdf-pages hidden" id="pdf-pages"><button class="subtle-button" id="previous-page" type="button">← Previous</button><span id="page-count"></span><button class="subtle-button" id="next-page" type="button">Next →</button></div><button class="subtle-button remove-bill" id="clear-upload" type="button">Remove bill</button></div>
+          <div class="canvas-frame hidden" id="canvas-frame"><canvas id="redacted-canvas" aria-label="Bill page. Drag to black out private information."></canvas></div>
+        </div>
+        <details class="paste-toggle" id="paste-toggle"><summary>Paste text instead</summary><textarea id="bill-text" rows="6" placeholder="Paste your bill’s text here. Remove your name, address and account numbers first."></textarea></details>
+        <label class="review-confirm"><input id="confirm-redaction" type="checkbox"><span>I covered my name, address and account numbers.</span></label>
+        <p class="privacy-line">Only the covered page (or pasted text) is sent to read your bill. We don’t save it, but the AI service that reads it may keep a copy.</p>
+      </div>
+
+      <form id="manual-view" class="input-view manual-form hidden">
+        <div class="manual-fields">
+          <label>Hospital or clinic <input name="hospital" placeholder="e.g. Lakeside Medical Center" autocomplete="off"></label>
+          <label>Insurance <span class="optional">optional</span><input name="payer" placeholder="e.g. Blue Cross PPO" autocomplete="off"></label>
+          <div class="line-items-heading"><span>Charges</span></div>
+          <div class="line-entry"><label>Service<input name="service" placeholder="e.g. CT scan of head" required></label><label>Code <span class="optional">optional</span><input name="code" placeholder="e.g. 70450" autocomplete="off"></label><label>Charge<input name="charge" type="number" min="0" step="0.01" placeholder="1200" required></label><button type="button" class="remove-line" aria-label="Remove this charge">×</button></div>
+          <div class="manual-bottom"><button type="button" class="subtle-button" id="add-line">+ Add a charge</button></div>
+          <label>Insurance paid <span class="optional">optional</span><input name="paid_total" type="number" min="0" step="0.01" placeholder="0.00"></label>
+          <label>Amount you owe <span class="optional">from your bill</span><input name="owed_total" type="number" min="0" step="0.01" placeholder="0.00"></label>
+        </div>
+      </form>
+
+      <button class="button continue-button" id="continue-button">Check my bill <span>→</span></button>
+      <div class="progress-row hidden" id="progress-row" role="status" aria-live="polite">
+        <div class="progress-item" data-step="read"><i></i><span>Reading your bill</span></div>
+        <div class="progress-item" data-step="match"><i></i><span>Matching published prices</span></div>
+        <div class="progress-item" data-step="write"><i></i><span>Writing your script</span></div>
+        <p class="progress-note">This usually takes 10–20 seconds.</p>
+      </div>
+      <p class="step-error hidden" id="step-error" role="alert"></p>
+    </section>
+
+    <section class="results-section hidden" id="results-section">
+      <article class="result-card">
+        <p class="result-context" id="result-context"></p>
+        <h2 class="result-title" id="result-title"></h2>
+        <div class="result-flow" id="result-flow">
+          <div class="flow-item"><span>Total billed</span><b id="flow-billed"></b></div>
+          <div class="flow-arrow" id="arrow-fair" aria-hidden="true"><i>→</i></div>
+          <div class="flow-item" id="flow-fair-item"><span id="flow-fair-label">Fair price</span><b id="flow-fair"></b></div>
+          <div class="flow-arrow" id="arrow-pay"><i aria-hidden="true">→</i><small id="flow-paid"></small></div>
+          <div class="flow-item pay" id="flow-pay-item"><span>You should pay</span><b id="flow-should"></b><small id="flow-asked"></small></div>
+        </div>
+        <p class="result-note hidden" id="result-note"></p>
+      </article>
+
+      <article class="plan-card">
+        <div class="plan-head"><h3>What to do next</h3><button class="copy-button" id="copy-script">Copy script</button></div>
+        <ol class="next-steps" id="next-steps"></ol>
+        <label class="script-label" for="script-text">What to say when you call <span>Fill in your name and account number</span></label>
+        <textarea id="script-text" rows="9"></textarea>
+      </article>
+
+      <article class="charges-card">
+        <h3>Your charges</h3>
+        <table class="charges-table"><thead><tr><th>Service</th><th>Billed</th><th id="fair-column">Fair price</th></tr></thead><tbody id="charge-rows"></tbody></table>
+        <details class="how-details"><summary>How we got these numbers</summary><div id="how-body"></div></details>
+      </article>
+
+      <div class="results-actions"><button class="subtle-button" id="edit-bill">← Fix bill details</button><button class="subtle-button" id="start-over">Check another bill</button></div>
+    </section>
+    <footer class="analyzer-footer"><span>HappyBill</span><span>Informational tool only · Not medical, legal, or financial advice.</span><a href="index.html">Home</a></footer>
+  </main>
+  <script src="analyze.js"></script>
+</body>
+</html>

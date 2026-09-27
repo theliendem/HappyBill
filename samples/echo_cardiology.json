@@ -1,0 +1,75 @@
+{
+  "document": {
+    "document_type": "physician_statement",
+    "is_itemized": true,
+    "statement_date": "2026-09-03"
+  },
+  "provider": {
+    "billing_provider_name": "Heartland Cardiology Associates",
+    "billing_npi": "1578390026"
+  },
+  "insurance": {
+    "coverage_status": "insured",
+    "payer_name": "WPS Health Solutions",
+    "plan_name": "Statewide"
+  },
+  "encounter": {
+    "setting": "outpatient"
+  },
+  "line_items": [
+    {
+      "ref": "L1",
+      "service_date": "08/20/2026",
+      "revenue_code": null,
+      "code_as_printed": "99204",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "New patient visit, moderate complexity",
+      "units": 1,
+      "charge_amount": 395.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L2",
+      "service_date": "08/20/2026",
+      "revenue_code": null,
+      "code_as_printed": "93306",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Echocardiogram, complete, with Doppler",
+      "units": 1,
+      "charge_amount": 3113.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L3",
+      "service_date": "08/20/2026",
+      "revenue_code": null,
+      "code_as_printed": "93000",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Electrocardiogram, 12-lead, with report",
+      "units": 1,
+      "charge_amount": 85.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    }
+  ],
+  "totals": {
+    "total_charges": 3593.0,
+    "insurance_payments": 521.02,
+    "adjustments": 179.65,
+    "patient_balance_due": 2892.33
+  }
+}

@@ -1,0 +1,426 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bill",
+  "description": "Everything on a (user-redacted) bill needed to pin each line to a negotiated rate.\nNever contains patient name, member ID, account number, date of birth or address.",
+  "properties": {
+    "document": {
+      "properties": {
+        "document_type": {
+          "default": "other",
+          "description": "Hospital statement / UB-04 = facility bill; physician statement / CMS-1500 = professional bill.",
+          "enum": [
+            "itemized_hospital_statement",
+            "ub04_facility_claim",
+            "physician_statement",
+            "cms1500_professional_claim",
+            "summary_statement",
+            "eob",
+            "other"
+          ],
+          "type": "string"
+        },
+        "is_itemized": {
+          "default": true,
+          "description": "False if the bill shows only totals or departments, no per-service lines.",
+          "type": "boolean"
+        },
+        "statement_date": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "YYYY-MM-DD"
+        }
+      },
+      "type": "object"
+    },
+    "provider": {
+      "properties": {
+        "billing_provider_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "As printed, e.g. 'UW Health University Hospital'."
+        },
+        "facility_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Location if different from the billing name."
+        },
+        "billing_npi": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "10-digit billing/facility NPI if printed."
+        },
+        "tin": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Federal tax ID / EIN if printed, digits only."
+        }
+      },
+      "type": "object"
+    },
+    "insurance": {
+      "properties": {
+        "coverage_status": {
+          "default": "unknown",
+          "description": "'Self pay' / 'no insurance on file' -> uninsured_self_pay.",
+          "enum": [
+            "insured",
+            "uninsured_self_pay",
+            "unknown"
+          ],
+          "type": "string"
+        },
+        "payer_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Insurer as printed, e.g. 'WPS Health Solutions'."
+        },
+        "plan_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Plan/product/network as printed, e.g. 'Statewide', 'HealthyU'."
+        },
+        "plan_type": {
+          "default": "unknown",
+          "enum": [
+            "commercial",
+            "medicare_advantage",
+            "medicaid",
+            "medicare",
+            "other",
+            "unknown"
+          ],
+          "type": "string"
+        },
+        "network_status": {
+          "default": "unknown",
+          "enum": [
+            "in_network",
+            "out_of_network",
+            "unknown"
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "encounter": {
+      "properties": {
+        "setting": {
+          "default": "unknown",
+          "enum": [
+            "inpatient",
+            "outpatient",
+            "emergency",
+            "unknown"
+          ],
+          "type": "string"
+        },
+        "admission_date": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "discharge_date": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "drg_code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "DRG if printed (inpatient bills), e.g. '470'."
+        }
+      },
+      "type": "object"
+    },
+    "line_items": {
+      "items": {
+        "properties": {
+          "ref": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Line id; assigned by the server if missing (L1, L2, ...)."
+          },
+          "service_date": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "revenue_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "4-digit UB-04 revenue code if printed, e.g. '0611'."
+          },
+          "code_as_printed": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Exact code text as printed, e.g. '99213-25'. Null if no code is printed."
+          },
+          "code_type_as_printed": {
+            "anyOf": [
+              {
+                "enum": [
+                  "CPT",
+                  "HCPCS",
+                  "MS-DRG",
+                  "APR-DRG",
+                  "NDC",
+                  "CDM"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "modifiers": {
+            "description": "Modifiers if printed separately.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "description_as_printed": {
+            "description": "Line description, verbatim.",
+            "type": "string"
+          },
+          "units": {
+            "default": 1,
+            "type": "number"
+          },
+          "charge_amount": {
+            "description": "Billed amount for the line.",
+            "type": "number"
+          },
+          "insurance_paid": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "adjustment": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "patient_responsibility": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "legibility": {
+            "default": "clear",
+            "enum": [
+              "clear",
+              "partial",
+              "illegible"
+            ],
+            "type": "string"
+          },
+          "candidate_codes": {
+            "description": "ONLY when no code is printed: your best-guess billing code first, then close alternatives (neighboring visit levels, with/without contrast). Guess the code the hospital billed.",
+            "items": {
+              "properties": {
+                "code": {
+                  "type": "string"
+                },
+                "code_type": {
+                  "anyOf": [
+                    {
+                      "enum": [
+                        "CPT",
+                        "HCPCS",
+                        "MS-DRG",
+                        "APR-DRG"
+                      ],
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null
+                }
+              },
+              "required": [
+                "code"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "description_as_printed",
+          "charge_amount"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "totals": {
+      "properties": {
+        "total_charges": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "insurance_payments": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "adjustments": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "patient_balance_due": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "type": "object"
+    }
+  },
+  "type": "object"
+}

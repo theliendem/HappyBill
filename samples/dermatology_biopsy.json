@@ -1,0 +1,75 @@
+{
+  "document": {
+    "document_type": "physician_statement",
+    "is_itemized": true,
+    "statement_date": "2026-09-12"
+  },
+  "provider": {
+    "billing_provider_name": "Clearwater Dermatology",
+    "billing_npi": "1326078841"
+  },
+  "insurance": {
+    "coverage_status": "insured",
+    "payer_name": "Cigna",
+    "plan_name": "Open Access Plus"
+  },
+  "encounter": {
+    "setting": "outpatient"
+  },
+  "line_items": [
+    {
+      "ref": "L1",
+      "service_date": "08/29/2026",
+      "revenue_code": null,
+      "code_as_printed": "99203",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "New patient office visit, low complexity",
+      "units": 1,
+      "charge_amount": 245.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L2",
+      "service_date": "08/29/2026",
+      "revenue_code": null,
+      "code_as_printed": "11102",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Tangential biopsy of skin, single lesion",
+      "units": 1,
+      "charge_amount": 409.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L3",
+      "service_date": "08/29/2026",
+      "revenue_code": null,
+      "code_as_printed": "88305",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Surgical pathology, gross & micro, level IV",
+      "units": 1,
+      "charge_amount": 180.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    }
+  ],
+  "totals": {
+    "total_charges": 834.0,
+    "insurance_payments": 166.96,
+    "adjustments": 0.0,
+    "patient_balance_due": 667.04
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "document": {
+    "document_type": "physician_statement",
+    "is_itemized": true,
+    "statement_date": "2026-09-08"
+  },
+  "provider": {
+    "billing_provider_name": "Northside Urgent Care",
+    "billing_npi": "1487265530"
+  },
+  "insurance": {
+    "coverage_status": "insured",
+    "payer_name": "Quartz Health Solutions",
+    "plan_name": "Quartz One"
+  },
+  "encounter": {
+    "setting": "outpatient"
+  },
+  "line_items": [
+    {
+      "ref": "L1",
+      "service_date": "08/21/2026",
+      "revenue_code": null,
+      "code_as_printed": "99214",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Office visit, established, moderate",
+      "units": 1,
+      "charge_amount": 285.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L2",
+      "service_date": "08/21/2026",
+      "revenue_code": null,
+      "code_as_printed": "87880",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Strep A rapid antigen test",
+      "units": 1,
+      "charge_amount": 168.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L3",
+      "service_date": "08/21/2026",
+      "revenue_code": null,
+      "code_as_printed": "87804",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Influenza rapid antigen test",
+      "units": 1,
+      "charge_amount": 95.0,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    },
+    {
+      "ref": "L4",
+      "service_date": "08/21/2026",
+      "revenue_code": null,
+      "code_as_printed": "36415",
+      "code_type_as_printed": null,
+      "modifiers": [],
+      "description_as_printed": "Venipuncture",
+      "units": 1,
+      "charge_amount": 38.95,
+      "insurance_paid": null,
+      "adjustment": null,
+      "patient_responsibility": null,
+      "legibility": "clear",
+      "candidate_codes": []
+    }
+  ],
+  "totals": {
+    "total_charges": 586.95,
+    "insurance_payments": 272.34,
+    "adjustments": 0.0,
+    "patient_balance_due": 314.61
+  }
+}
