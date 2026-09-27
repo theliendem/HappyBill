@@ -20,6 +20,15 @@ CREATE TABLE sources (
     loaded_at       TIMESTAMPTZ DEFAULT now()
 );
 
+-- Runs of lakehouse/sync.py (Databricks Volume -> this database).
+CREATE TABLE sync_log (
+    id         SERIAL PRIMARY KEY,
+    synced_at  TIMESTAMPTZ DEFAULT now(),
+    remote     TEXT NOT NULL,       -- Volume path synced from
+    checked    INT NOT NULL,        -- sources found on Databricks
+    loaded     TEXT[] NOT NULL      -- source_ids newly loaded
+);
+
 -- ---------- Who pays ----------
 
 CREATE TABLE payers (

@@ -30,3 +30,26 @@ Create a `.env` with `LLM_API_KEY` (or `GEMINI_API_KEY`) and optionally `DATABAS
 API docs are at http://localhost:8000/docs. Open `Frontend/index.html` for the UI.
 
 The raw source price files (multi-GB JSON/CSV) are not checked in.
+
+## Databricks lakehouse sync
+
+Databricks is the system of record for price data; Postgres is the fast serving copy the app queries.
+
+```
+parsers/out/<source>/*.csv.gz ──push──► Databricks Volume + Delta tables (workspace.happybill.*)
+                                               │
+                                             sync (new sources only)
+                                               ▼
+                                      Postgres ──► API ──► site footer shows last sync
+```
+
+Add `DATABRICKS_HOST`, `DATABRICKS_TOKEN` and `DATABRICKS_WAREHOUSE_ID` to `.env`, then:
+
+```bash
+.venv/bin/python -m lakehouse.push     # upload parsed sources, build Delta tables
+.venv/bin/python -m lakehouse.sync     # load any new Databricks sources into Postgres
+```
+
+`GET /api/sources` lists loaded sources and the last sync. The LLM can also run on Databricks Model
+Serving (OpenAI-compatible): set `LLM_BASE_URL=https://<workspace>/serving-endpoints`,
+`LLM_API_KEY=<token>` and `LLM_MODEL=<endpoint name>`.

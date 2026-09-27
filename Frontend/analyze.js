@@ -486,3 +486,12 @@ function optionalNumber(value) { return String(value ?? '').trim() === '' ? null
 function round2(value) { return Math.round(value * 100) / 100; }
 function money(value) { return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:2}).format(value); }
 function escapeHTML(value) { return String(value).replace(/[&<>"']/g, char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char])); }
+
+// Footer: which price sources are loaded and when they last synced from the Databricks lakehouse.
+fetch(API_BASE + '/api/sources').then(r => r.ok ? r.json() : null).then(data => {
+  if (!data || !data.sources.length) return;
+  const el = document.getElementById('data-sources');
+  const sync = data.last_sync ? ` · synced from Databricks ${new Date(data.last_sync.synced_at).toLocaleDateString()}` : ' · Databricks lakehouse';
+  el.textContent = `${data.sources.length} price sources${sync}`;
+  el.hidden = false;
+}).catch(() => {});

@@ -102,6 +102,17 @@ def plan_endpoint(req: AnalyzeRequest):
             "plan": plan.model_dump(), "generated_by": generated_by, "note": note}
 
 
+@app.get("/api/sources")
+def sources():
+    """Price sources loaded in Postgres and the last Databricks sync (lakehouse/sync.py)."""
+    rows = db.query("SELECT source_id, source_type, publisher, loaded_at FROM sources ORDER BY source_id")
+    try:
+        last = db.one("SELECT synced_at, remote FROM sync_log ORDER BY synced_at DESC LIMIT 1")
+    except Exception:
+        last = None
+    return {"sources": rows, "last_sync": last}
+
+
 @app.get("/test", include_in_schema=False)
 def test_page():
     """Bare-bones page for trying the flow before the real front end exists."""
